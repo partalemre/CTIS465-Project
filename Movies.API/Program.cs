@@ -3,6 +3,8 @@ using Movies.APP.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//builder.AddServiceDefaults();
+
 // Add services to the container. IoC (Inversion of Control) Container
 // For DbContext Injection
 var connectionString = builder.Configuration.GetConnectionString(nameof(MoviesDb)); // "MoviesDb"
@@ -20,6 +22,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
